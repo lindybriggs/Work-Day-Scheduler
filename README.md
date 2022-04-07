@@ -10,4 +10,8 @@
 
 ## Link to Deployed Application
 
+https://lindybriggs.github.io/hw5-scheduler/
+
 ## Screenshot
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/101146153/162282056-94da748a-4284-4f26-abba-63367d0f33a4.gif)
