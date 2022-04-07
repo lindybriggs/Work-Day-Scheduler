@@ -8,21 +8,36 @@ console.log("date working");
 
 
 let saveButton = document.querySelector(".saveBtn");
-let enteredText = saveButton.parentElement.children[1];
 
-saveButton.addEventListener("click", function (event) {
 
-    console.log(event.target);
+// imageContainer.addEventListener("click", function(event) {
+//     var element = event.target;
+  
+//     // Check if the clicked element was an image
+//     if (element.matches("img")) {
+//       // Get the current value of the image's data-state attribute
+//       var state = element.getAttribute("data-state");
 
-    console.log(enteredText.value);
+let container = document.querySelector(".container")
 
-    saveEvent(enteredText.id);
-    renderSavedEvent();
+container.addEventListener("click", function(event){
+    let element = event.target;
+
+    if (element.matches("button")){
+        let enteredText = element.parentElement.children[1];
+        console.log(event.target);
+
+        console.log(enteredText.value);
+    
+        saveEvent(enteredText);
+        renderSavedEvent();
+    }
 })
 
-function saveEvent(hour) {
-    console.log(typeof(hour));
-    localStorage.setItem(hour, enteredText.value);
+
+function saveEvent(enteredText) {
+    console.log(enteredText.id);
+    localStorage.setItem(enteredText.id, enteredText.value);
 
     console.log(localStorage);
 
@@ -50,21 +65,19 @@ function colorBlock() {
     let currentHour = moment().hours();
     console.log(currentHour);
 
-    let blockHour = document.querySelector(".hour-chunk");
-    let thatHour = blockHour.dataset.hour;
-    console.log(thatHour);
+    let blockHour = document.querySelectorAll(".hour-chunk");
 
     $(blockHour).each(function () {
-
+        let thatHour = this.dataset.hour;
         if (thatHour > currentHour) {
-            $(enteredText).addClass('future');
+            $(this).addClass('future');
         } else if (thatHour === currentHour) {
-            $(enteredText).addClass('present');
+            $(this).addClass('present');
         } else {
-            $(enteredText).addClass('past');
+            $(this).addClass('past');
         }
 
-        console.log(enteredText);
+        // console.log(enteredText);
     })
 
 }
