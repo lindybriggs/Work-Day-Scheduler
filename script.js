@@ -20,17 +20,24 @@ saveButton.addEventListener("click", function (event) {
     renderSavedEvent();
 })
 
-function saveEvent(hour){
-    console.log(hour);
+function saveEvent(hour) {
+    console.log(typeof(hour));
     localStorage.setItem(hour, enteredText.value);
 
     console.log(localStorage);
-    
+
 }
 
-function renderSavedEvent (){
-    enteredText.value = localStorage.getItem("9");
-    console.log(localStorage);
+let allTextAreas = document.querySelectorAll('textarea');
+
+function renderSavedEvent() {
+
+    for (let i = 0; i < allTextAreas.length; i++) {
+        console.log((i+9).toString())
+        console.log(allTextAreas[i])
+        allTextAreas[i].value = localStorage.getItem((i + 9));
+        console.log((typeof(i + 9)));
+    }
 }
 
 
@@ -39,7 +46,7 @@ function renderSavedEvent (){
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-function colorBlock(){
+function colorBlock() {
     let currentHour = moment().hours();
     console.log(currentHour);
 
@@ -47,19 +54,19 @@ function colorBlock(){
     let thatHour = blockHour.dataset.hour;
     console.log(thatHour);
 
-    $(blockHour).each(function(){
+    $(blockHour).each(function () {
 
-        if (thatHour > currentHour){
+        if (thatHour > currentHour) {
             $(enteredText).addClass('future');
-        } else if (thatHour === currentHour){
+        } else if (thatHour === currentHour) {
             $(enteredText).addClass('present');
         } else {
             $(enteredText).addClass('past');
         }
 
-    console.log(enteredText);
+        console.log(enteredText);
     })
-    
+
 }
 
 
