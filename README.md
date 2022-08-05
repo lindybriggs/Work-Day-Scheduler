@@ -1,4 +1,4 @@
-# Homework #5 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
 ## Description
 
@@ -8,9 +8,17 @@
 
 * Sucessfully pushed commits to github repo with descriptive messages
 
-## Link to Deployed Application
+## Features 
 
-https://lindybriggs.github.io/hw5-scheduler/
+* HTML
+* CSS
+* jQuery
+* Moment Library
+* Third-Party APIs
+
+## Link
+
+Visit the deployed app [here](https://lindybriggs.github.io/Work-Day-Scheduler/)!
 
 ## Screenshot
 

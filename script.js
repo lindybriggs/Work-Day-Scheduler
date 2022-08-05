@@ -35,6 +35,7 @@ container.addEventListener("click", function (event) {
 // Saves value of what's inside text area to local storage
 function saveEvent(enteredText) {
     console.log(enteredText.id);
+    console.log(enteredText.dataset.hour);
     localStorage.setItem(enteredText.id, enteredText.value);
 
     console.log(localStorage);
